@@ -1,0 +1,139 @@
+Table usuario{
+  id_usuario int [primary key]
+  nombre varchar(300)
+  apellido varchar(300)
+  correo varchar(300)
+  fecha_registro date
+  salario_mensual double
+  estado bool
+
+  creado_por varchar(300)
+  modificado_por varchar(300)
+  creado_en timestamp
+  modificado_en timestamp
+}
+
+Table presupuesto{
+  id_presupuesto int [primary key]
+  id_usuario int
+  usuario varchar(300)
+  nombre varchar(300)
+  year_inicio int
+  mes_inicio int
+  year_fin int
+  mes_fin int
+  total_ingresos double
+  total_gastos double
+  total_ahorro double
+  fecha_hora_creacion date
+  estado bool
+
+  creado_por varchar(300)
+  modificado_por varchar(300)
+  creado_en timestamp
+  modificado_en timestamp
+}
+
+Table categoria{
+  id_categoria int [primary key]
+  id_usuario int
+  nombre varchar(300)
+  descripcion varchar(300)
+  tipo varchar(300)
+
+  creado_por varchar(300)
+  modificado_por varchar(300)
+  creado_en timestamp
+  modificado_en timestamp
+}
+
+Table subcategoria{
+  id_subcategoria int [primary key]
+  id_categoria int
+  categoria varchar(300)
+  nombre varchar(300)
+  descripcion varchar(300)
+  indicador_activa bool
+  indicador_subcategoria varchar(300)
+
+  creado_por varchar(300)
+  modificado_por varchar(300)
+  creado_en timestamp
+  modificado_en timestamp
+}
+
+Table presupuesto_detalle{
+  id_presupuesto_detalle int [primary key]
+  id_presupuesto int
+  id_subcategoria int
+  monto_mensual double
+  observaciones varchar(500)
+
+  creado_por varchar(300)
+  modificado_por varchar(300)
+  creado_en timestamp
+  modificado_en timestamp
+}
+
+Table obligacion_fija{
+  id_obligacion int [primary key]
+  id_usuario int
+  id_subcategoria int
+  nombre varchar(300)
+  descripcion varchar(500)
+  monto_mensual double
+  dia_vencimiento int
+  vigente bool
+  fecha_inicio date
+  fecha_finalizacion date
+
+  creado_por varchar(300)
+  modificado_por varchar(300)
+  creado_en timestamp
+  modificado_en timestamp
+}
+
+Table transaccion{
+  id_transaccion int [primary key]
+  id_usuario int
+  id_presupuesto int
+  year int
+  mes int
+  id_subcategoria int
+  id_obligacion int
+  tipo_transaccion varchar(300)
+  descripcion varchar
+  monto double
+  fecha date
+  metodo_pago varchar
+  fecha_registro datetime
+  num_factura varchar
+  observaciones varchar
+
+  creado_por varchar(300)
+  modificado_por varchar(300)
+  creado_en timestamp
+  modificado_en timestamp
+}
+
+Ref: "usuario"."id_usuario" < "presupuesto"."id_usuario"
+
+Ref: "usuario"."id_usuario" < "categoria"."id_usuario"
+
+Ref: "categoria"."id_categoria" < "subcategoria"."id_categoria"
+
+Ref: "presupuesto"."id_presupuesto" < "presupuesto_detalle"."id_presupuesto"
+
+Ref: "subcategoria"."id_subcategoria" < "presupuesto_detalle"."id_subcategoria"
+
+Ref: "usuario"."id_usuario" < "obligacion_fija"."id_usuario"
+
+Ref: "subcategoria"."id_subcategoria" < "obligacion_fija"."id_subcategoria"
+
+Ref: "usuario"."id_usuario" < "transaccion"."id_usuario"
+
+Ref: "presupuesto"."id_presupuesto" < "transaccion"."id_presupuesto"
+
+Ref: "subcategoria"."id_subcategoria" < "transaccion"."id_subcategoria"
+
+Ref: "obligacion_fija"."id_obligacion" < "transaccion"."id_obligacion"
