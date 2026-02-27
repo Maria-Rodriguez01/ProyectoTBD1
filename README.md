@@ -33,3 +33,5 @@ El sistema a continuacion debera permitir:
 Para hacer la instalacion, ingrese a https://www.sap.com/products/data-cloud/sql-anywhere.html,
 donde se encuentra el instalador de la base de datos. Se descargo un archivo, y a partir de ello
 comence el proceso de instalacion. En este caso yo elegi el instalador para Windows.
+
+## 6.Creacion de base de datos en SQL Central (SQL Anywhere)
