@@ -1,38 +1,69 @@
-# ProyectoTBD1
+# ProyectoTBD1  
+## Sistema de Gestión de Presupuesto Personal  
 
-## 1. Descripcion General
-En el proyecto a continuancion, se proyecta el desarrollo de un sistema completo de gestion
-de presupuesto personal que permite a un usuario planificar, controlar y analizar sus finanzas 
-de forma que sea facil y efectivo. Dentro del sistema se puede agregar datos como ingresos, 
-gastos, obligaciones mensaules y metas de ahorro a traves de la aplicacion, de manera en que se
-le facilita al usuario manejarlas.
+---
 
-## 2. Objetivo General
-Aplicar conocimientos adquiridos a lo largo de la clase de Teoria de Base de Datos 1 para poder generar
-mediante la implementacion de lo aprendido una gestion para el manejo financiero personal.
+## 1. Descripción General  
 
-## 3. Alcance del Sistema
-El sistema a continuacion debera permitir:
- - Gestionar usuarios con informacion basica
- - Definir presupuestos con vigencia temporal (fecha inicial a fecha limite )
- - Clasificar correctamente los ingresos, gastos y ahorros divididos en categorias y subcategorias
- - Registrar las obligaciones fijas mensuales(renta, servicios, seguros, prestamos, deudas)
- - Registrar transacciones individuales por categoria
- - Visualizar reportes analiticos de dicha informacion
+El presente proyecto consiste en el desarrollo de un sistema integral de gestión de presupuesto personal, cuyo propósito es permitir al usuario planificar, controlar y analizar sus finanzas de manera eficiente y organizada.
 
-## 4. Tecnologias/ Recursos utilizados en el proyecto
-| Capa | Tecnologia |
+El sistema permite registrar información financiera relevante como ingresos, gastos, obligaciones mensuales y metas de ahorro. A través de la aplicación, el usuario podrá administrar sus recursos económicos de forma estructurada, facilitando la toma de decisiones financieras responsables.
+
+---
+
+## 2. Objetivo General  
+
+Aplicar los conocimientos adquiridos en la asignatura **Teoría de Base de Datos I**, mediante el diseño e implementación de una base de datos funcional que permita la gestión estructurada de información financiera personal.
+
+---
+
+## 3. Alcance del Sistema  
+
+El sistema deberá permitir:
+
+- Gestionar usuarios con información básica.  
+- Definir presupuestos con vigencia temporal (fecha inicial y fecha límite).  
+- Clasificar ingresos, gastos y ahorros mediante categorías y subcategorías.  
+- Registrar obligaciones fijas mensuales (renta, servicios, seguros, préstamos y deudas).  
+- Registrar transacciones individuales asociadas a una categoría específica.  
+- Generar y visualizar reportes analíticos para el análisis financiero.  
+
+---
+
+## 4. Tecnologías y Recursos Utilizados  
+
+| Capa | Tecnología |
 |------|------------|
-| Base de Datos | SQL Anywhere|
+| Base de Datos | SQL Anywhere |
 | Backend | Java |
 | Frontend | Java (Swing) |
-| Reporteria | Metabase |
-| Control de Versiones | Github |
+| Reportería | Metabase |
+| Control de Versiones | GitHub |
 
-## 5. Instalacion de SQL Anywhere (base de datos utilizada)
-Para hacer la instalacion, ingrese a https://www.sap.com/products/data-cloud/sql-anywhere.html,
-donde se encuentra el instalador de la base de datos. Se descargo un archivo, y a partir de ello
-comence el proceso de instalacion. En este caso yo elegi el instalador para Windows.
+---
 
-## 6.Creacion de base de datos en SQL Central (SQL Anywhere)
-Para poder crear mi base de datos, entre al programa y le di click al boton de Tools, elegi SQL Anywhere(Adonde estare creando mi base de datos) y le di click al boton de Create Database. Despues, me aparecio la opcion de elegir adonde crearia yo la base de datos, yo elegi en mi computadora porque alli seria donde estaria trabajando. Por ultimo me aparecio la opcion de elegir adonde y como guardaria el proyecto, en mi caso, guarde el proyecto en la carpeta de la clase de la carrera y lo llame "22441044_ProyectoTBD.db". Tambien se me dio la opcion de instalar JConnect metadata support, lo instale ya que estare conectando la base de datos con Java. Despues me salieron configuracions ya sea para acentos, manejo de espacios e idioma.
+## 5. Instalación de SQL Anywhere  
+
+Para la instalación de la base de datos, se accedió al sitio oficial de SAP:
+
+https://www.sap.com/products/data-cloud/sql-anywhere.html  
+
+Desde allí se descargó el instalador correspondiente al sistema operativo Windows. Posteriormente, se ejecutó el proceso de instalación siguiendo las instrucciones del asistente hasta completar correctamente la instalación.
+
+---
+
+## 6. Creación de la Base de Datos en SQL Central  
+
+Para la creación de la base de datos se realizaron los siguientes pasos:
+
+1. Se abrió el programa **SQL Central**.  
+2. Se seleccionó la opción **Tools**.  
+3. Se eligió **SQL Anywhere**.  
+4. Se hizo clic en **Create Database**.  
+5. Se seleccionó la ubicación local en el equipo.  
+6. Se guardó el archivo con el nombre:
+
+    22441044_ProyectoTBD.db
+
+7. Se activó la opción **JConnect metadata support**, debido a que la base de datos será conectada posteriormente con una aplicación desarrollada en Java.  
+8. Se configuraron las opciones de collation relacionadas con idioma, manejo de acentos y sensibilidad de mayúsculas/minúsculas, asegurando compatibilidad con el idioma español.
