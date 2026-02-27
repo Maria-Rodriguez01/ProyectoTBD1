@@ -35,3 +35,4 @@ donde se encuentra el instalador de la base de datos. Se descargo un archivo, y 
 comence el proceso de instalacion. En este caso yo elegi el instalador para Windows.
 
 ## 6.Creacion de base de datos en SQL Central (SQL Anywhere)
+Para poder crear mi base de datos, entre al programa y le di click al boton de Tools, elegi SQL Anywhere(Adonde estare creando mi base de datos) y le di click al boton de Create Database. Despues, me aparecio la opcion de elegir adonde crearia yo la base de datos, yo elegi en mi computadora porque alli seria donde estaria trabajando. Por ultimo me aparecio la opcion de elegir adonde y como guardaria el proyecto, en mi caso, guarde el proyecto en la carpeta de la clase de la carrera y lo llame "22441044_ProyectoTBD.db". Tambien se me dio la opcion de instalar JConnect metadata support, lo instale ya que estare conectando la base de datos con Java. Despues me salieron configuracions ya sea para acentos, manejo de espacios e idioma.
