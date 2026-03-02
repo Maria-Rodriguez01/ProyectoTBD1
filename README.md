@@ -71,7 +71,7 @@ Para la creación de la base de datos se realizaron los siguientes pasos:
 
 ## 7. Creación de la Tablas dentro de la Base de Datos
 Para crear las tablas de las diferentes entidades, hice uso de el .sql ya creado de el dbml creado inicialmente:
----
+
 CREATE TABLE "usuario" (
   "id_usuario" int PRIMARY KEY,
   "nombre" varchar(300),
@@ -201,6 +201,6 @@ ALTER TABLE "transaccion" ADD FOREIGN KEY ("id_presupuesto") REFERENCES "presupu
 ALTER TABLE "transacciones_obligacion_fija" ADD FOREIGN KEY ("id_transaccion") REFERENCES "transaccion" ("id_transaccion");
 
 ALTER TABLE "transacciones_obligacion_fija" ADD FOREIGN KEY ("id_obligacion") REFERENCES "obligacion_fija" ("id_obligacion");
----
+
 Se crearon las siguientes tablas: usuario, transaccion, obligacion fija, presupuesto, categoria, subcategoria, presupuesto-detalle y transacciones-obligacion fija.
     
