@@ -203,4 +203,9 @@ ALTER TABLE "transacciones_obligacion_fija" ADD FOREIGN KEY ("id_transaccion") R
 ALTER TABLE "transacciones_obligacion_fija" ADD FOREIGN KEY ("id_obligacion") REFERENCES "obligacion_fija" ("id_obligacion");
 
 Se crearon las siguientes tablas: usuario, transaccion, obligacion fija, presupuesto, categoria, subcategoria, presupuesto-detalle y transacciones-obligacion fija.
-    
+
+---
+## 7. Creación de Procedimientos CRUD
+1. Primero, cree todo el crud para el usuario (crud_usuario.sql)
+2. Despues, segui con el de categoria y subcategoria (crud_categoria.sql y crud_subcategoria.sql)
+3. 
