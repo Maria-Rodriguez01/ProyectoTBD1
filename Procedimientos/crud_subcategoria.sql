@@ -2,7 +2,7 @@ CREATE OR REPLACE PROCEDURE sp_insertar_subcategoria(
     p_id_categoria INT,
     p_nombre VARCHAR(300),
     p_descripcion VARCHAR(300),
-    p_es_defecto BIT,
+    p_indicador_subcategoria BIT,
     p_creado_por VARCHAR(300)
 )
 AS
@@ -12,7 +12,7 @@ BEGIN
         nombre,
         descripcion,
         indicador_activa,
-        es_defecto,
+        indicador_subcategoria,
         creado_por,
         creado_en
     )
@@ -21,7 +21,7 @@ BEGIN
         p_nombre,
         p_descripcion,
         1,
-        p_es_defecto,
+        p_indicador_subcategoria,
         p_creado_por,
         CURRENT TIMESTAMP
     );
