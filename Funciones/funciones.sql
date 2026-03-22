@@ -200,6 +200,34 @@ CREATE OR REPLACE FUNCTION fn_calcular_proyeccion_gasto_mensual(p_id_subcategori
     RETURNS DECIMAL(10,2)
     BEGIN
 
+    DECLARE v_gasto DECIMAL(10,2);
+    DECLARE v_dias_transcurridos INT;
+    DECLARE v_proyeccion DECIMAL(10,2);
+    DECLARE v_total_dias INT;
+
+    SET v_dias_transcurridos = DAY(CURRENT TIMESTAMP);
+    SET v_dias_mes = DAY(LAST_DAY(CURRENT DATE));
+
+    SELECT COALESCE(SUM(monto),0)
+    INTO v_gasto
+    FROM transaccion
+    WHERE id_subcategoria = p_id_subcategoria
+    AND year = p_anio
+    AND mes = p_mes;
+
+    IF (v_gasto IS NULL OR v_dias_transcurridos = 0)
+    RETURN v_gasto = 0;
+    END IF;
+
+    IF(v_dias_transcurridos > 0)
+    SET v_proyeccion = (v_gasto / v_dias_transcurridos) * v_dias_mes;
+    ELSE SET v_proyeccion = 0;
+    END IF;
+    
+    RETURN v_proyeccion;
+
+END;
+
 --Funcion 10
 CREATE OR REPLACE FUNCTION fn_obtener_promedio_gasto_subcategoria(p_id_usuario INT,
     p_id_subcategoria INT,
@@ -210,5 +238,12 @@ CREATE OR REPLACE FUNCTION fn_obtener_promedio_gasto_subcategoria(p_id_usuario I
 
     DECLARE v_promedio DECIMAL(10,2)
 
-    
+    SELECT COALESCE(AVG(monto),0)
+    INTO v_promedio
+    FROM transaccion
+    WHERE id_subcategoria = p_id_subcategoria
+    AND year = YEAR(CURRENT DATE) AND mes >= MONTH(CURRENT DATE) - p_cantidad_meses;
+
+    RETURN v_promedio;
+END;
 
