@@ -202,10 +202,17 @@ ALTER TABLE "transacciones_obligacion_fija" ADD FOREIGN KEY ("id_transaccion") R
 
 ALTER TABLE "transacciones_obligacion_fija" ADD FOREIGN KEY ("id_obligacion") REFERENCES "obligacion_fija" ("id_obligacion");
 
-Se crearon las siguientes tablas: usuario, transaccion, obligacion fija, presupuesto, categoria, subcategoria, presupuesto-detalle y transacciones-obligacion fija.
+Se crearon las siguientes tablas: usuario, transaccion, obligacion fija, presupuesto, categoria, subcategoria, presupuesto-detalle y transacciones-obligacion fija. Estas tablas se crean a partir de que descargue el .sql de dbdiagram y con ayuda de la inteligencia artificial, ya que dbdiagram no tenia la sintaxis de sql anywhere, pude crear la sintaxis para crearla.
+
 
 ---
-## 7. Creación de Procedimientos CRUD
-1. Primero, cree todo el crud para el usuario (crud_usuario.sql)
-2. Despues, segui con el de categoria y subcategoria (crud_categoria.sql y crud_subcategoria.sql)
-3. 
+##8. Creacion de CRUD, Procedimientos Logicos, Funciones y Triggers
+Ya teniendo las tablas creadas, comence con el CRUD, el cual significa (Create, Read, Update, Delete) para cada uno de los atributos en la tabla. Despues, comence con las funciones, las cuales nos ayudan a hacer calculos o determinar rangos por medio de ellas. Tambien los procedimientos, que aunque no den un resultado ayudan a hacer algo dentro de la base de datos. Y por ultimo el trigger, el cual marca inmediatamente una subcategoria a la hora de crear una categoria.
+
+---
+##9. Conectar la Base de Datos en Java 
+Para poder implementar la parte visual, decidi conectar mi base de datos con Java, especificamente utilizando la aplicacion APACHE NETBEANS. No necesite instalarlo ya que anteriormente habia hecho uso de el. Al entrar, cree un nuevo proyecto. Para conectarlo con sql Central, le di al click derecho encima de el proyecto, le di click a properties y dentro de alli me fui a la seccion "Libraries". Ya en Libraries, le di al icono de + al lado de ClassPath y busque en mis archivos "C:\Program Files\SQL Anywhere 17\Java\sajdbc4.jar" ya que ese es el archivo de sql anywhere que permite la conexion. Para poder hacer uso de la base de datos, cree una clase que me ayude con la conexion con una base de datos en especifico, en este caso la del proyecto. Usando 
+            "String url = "jdbc:sqlanywhere:uid= Maria Rodriguez ;pwd=*********;"
+                    + "dbf=C:/Users/Maria Gabriela/OneDrive/Desktop/Ingenieria en Sistemas/TBD/22441044_ProyectoTBD.db";", 
+pude conectar con la base de datos, ya que jdbc es el tipo de base de datos que es, uid es mi user id con el que he trabajado, pwd siendo la clave de mi usuario y dbf en que carpeta esta mi base de datos.
+
