@@ -1,221 +1,333 @@
-# ProyectoTBD1  
-## Sistema de Gestión de Presupuesto Personal  
+# ProyectoTBD1
+# Sistema de Gestión de Presupuesto Personal
 
 ---
 
-## 1. Descripción General  
+## 1. Descripción General
 
-El presente proyecto consiste en el desarrollo de un sistema integral de gestión de presupuesto personal, cuyo propósito es permitir al usuario planificar, controlar y analizar sus finanzas de manera eficiente y organizada.
+El presente proyecto consiste en el desarrollo de un **Sistema de Gestión de Presupuesto Personal**, diseñado con el objetivo de ayudar a los usuarios a planificar, registrar y analizar sus finanzas personales de forma estructurada y organizada.
 
-El sistema permite registrar información financiera relevante como ingresos, gastos, obligaciones mensuales y metas de ahorro. A través de la aplicación, el usuario podrá administrar sus recursos económicos de forma estructurada, facilitando la toma de decisiones financieras responsables.
+La aplicación permite llevar un control detallado de los **ingresos, gastos, ahorros y obligaciones financieras**, brindando al usuario una herramienta que facilita la administración de su dinero y mejora la toma de decisiones financieras.
 
----
+A través del sistema es posible registrar diferentes tipos de movimientos financieros, clasificar gastos mediante categorías y subcategorías, establecer presupuestos con periodos específicos y analizar la información mediante reportes.
 
-## 2. Objetivo General  
-
-Aplicar los conocimientos adquiridos en la asignatura **Teoría de Base de Datos I**, mediante el diseño e implementación de una base de datos funcional que permita la gestión estructurada de información financiera personal.
+El sistema fue desarrollado aplicando los conceptos aprendidos en la asignatura **Teoría de Base de Datos I**, integrando el diseño de una base de datos relacional con una aplicación desarrollada en Java que permite interactuar con los datos almacenados.
 
 ---
 
-## 3. Alcance del Sistema  
+## 2. Objetivo General
 
-El sistema deberá permitir:
-
-- Gestionar usuarios con información básica.  
-- Definir presupuestos con vigencia temporal (fecha inicial y fecha límite).  
-- Clasificar ingresos, gastos y ahorros mediante categorías y subcategorías.  
-- Registrar obligaciones fijas mensuales (renta, servicios, seguros, préstamos y deudas).  
-- Registrar transacciones individuales asociadas a una categoría específica.  
-- Generar y visualizar reportes analíticos para el análisis financiero.  
+Aplicar los conocimientos adquiridos en la asignatura **Teoría de Base de Datos I**, mediante el diseño e implementación de un sistema de base de datos funcional que permita gestionar información financiera personal de manera estructurada, segura y eficiente.
 
 ---
 
-## 4. Tecnologías y Recursos Utilizados  
+## 3. Objetivos Específicos
+
+- Diseñar una base de datos relacional para almacenar información financiera personal.
+- Implementar tablas relacionadas que permitan representar correctamente las entidades del sistema.
+- Crear procedimientos, funciones y triggers que automaticen procesos dentro de la base de datos.
+- Desarrollar operaciones **CRUD (Create, Read, Update, Delete)** para la gestión de datos.
+- Conectar la base de datos con una aplicación desarrollada en **Java utilizando JDBC**.
+- Generar reportes que permitan visualizar y analizar la información financiera.
+
+---
+
+## 4. Alcance del Sistema
+
+El sistema permite realizar las siguientes funciones:
+
+- Gestión de usuarios y registro de información personal.
+- Creación y administración de presupuestos con periodo de vigencia.
+- Clasificación de ingresos, gastos y ahorros mediante categorías y subcategorías.
+- Registro de obligaciones financieras fijas como renta, servicios o préstamos.
+- Registro de transacciones financieras individuales.
+- Visualización de datos financieros organizados.
+- Generación de reportes que permitan analizar el comportamiento financiero del usuario.
+
+Este sistema está orientado a facilitar la **organización financiera personal**, permitiendo al usuario llevar un mejor control de sus recursos económicos.
+
+---
+
+## 5. Tecnologías Utilizadas
 
 | Capa | Tecnología |
-|------|------------|
+|-----|-------------|
 | Base de Datos | SQL Anywhere |
 | Backend | Java |
-| Frontend | Java (Swing) |
+| Interfaz Gráfica | Java Swing |
 | Reportería | Metabase |
+| Conexión BD | JDBC |
 | Control de Versiones | GitHub |
 
 ---
 
-## 5. Instalación de SQL Anywhere  
+## 6. Instalación de SQL Anywhere
 
-Para la instalación de la base de datos, se accedió al sitio oficial de SAP:
+Para la implementación del sistema se utilizó el gestor de base de datos **SQL Anywhere**, desarrollado por SAP.
 
+El proceso de instalación se realizó de la siguiente manera:
+
+1. Acceder al sitio oficial de SAP  
 https://www.sap.com/products/data-cloud/sql-anywhere.html  
 
-Desde allí se descargó el instalador correspondiente al sistema operativo Windows. Posteriormente, se ejecutó el proceso de instalación siguiendo las instrucciones del asistente hasta completar correctamente la instalación.
+2. Descargar el instalador correspondiente al sistema operativo Windows.
+
+3. Ejecutar el instalador siguiendo las instrucciones del asistente.
+
+4. Una vez completada la instalación, verificar el funcionamiento mediante **SQL Central**, la herramienta utilizada para administrar la base de datos.
 
 ---
 
-## 6. Creación de la Base de Datos en SQL Central  
+## 7. Creación de la Base de Datos
 
-Para la creación de la base de datos se realizaron los siguientes pasos:
+Para la creación de la base de datos se utilizó **SQL Central**.
 
-1. Se abrió el programa **SQL Central**.  
-2. Se seleccionó la opción **Tools**.  
-3. Se eligió **SQL Anywhere**.  
-4. Se hizo clic en **Create Database**.  
-5. Se seleccionó la ubicación local en el equipo.  
-6. Se guardó el archivo con el nombre
-    22441044_ProyectoTBD.db
+Pasos realizados:
 
-8. Se activó la opción **JConnect metadata support**, debido a que la base de datos será conectada posteriormente con una aplicación desarrollada en Java.  
-9. Se configuraron las opciones de collation relacionadas con idioma, manejo de acentos y sensibilidad de mayúsculas/minúsculas, asegurando compatibilidad con el idioma español.
+1. Abrir **SQL Central**.
+2. Seleccionar **Tools**.
+3. Elegir **SQL Anywhere**.
+4. Hacer clic en **Create Database**.
+5. Seleccionar la ubicación donde se guardará la base de datos.
+6. Guardar el archivo con el nombre:
+
+```
+22441044_ProyectoTBD.db
+```
+
+Durante la configuración se activó la opción:
+
+**JConnect Metadata Support**
+
+Esto permite conectar posteriormente la base de datos con aplicaciones desarrolladas en Java.
+
+También se configuraron opciones de **collation** relacionadas con idioma, manejo de acentos y sensibilidad de mayúsculas y minúsculas para asegurar compatibilidad con el idioma español.
+
+---
+
+## 8. Diseño de la Base de Datos
+
+El modelo de datos del sistema fue diseñado utilizando **DBDiagram**.
+
+Posteriormente se descargó el archivo SQL generado y se adaptó manualmente la sintaxis para que fuera compatible con **SQL Anywhere**, ya que la herramienta no genera automáticamente el formato adecuado para este gestor de base de datos.
+
+Las tablas principales creadas en el sistema son:
+
+- usuario
+- presupuesto
+- categoria
+- subcategoria
+- presupuesto_detalle
+- obligacion_fija
+- transaccion
+- transacciones_obligacion_fija
+
+Cada una de estas tablas representa una entidad importante dentro del sistema financiero.
 
 ---
 
-## 7. Creación de la Tablas dentro de la Base de Datos
-Para crear las tablas de las diferentes entidades, hice uso de el .sql ya creado de el dbml creado inicialmente:
+## 9. Descripción de las Tablas
 
-CREATE TABLE "usuario" (
-  "id_usuario" int PRIMARY KEY,
-  "nombre" varchar(300),
-  "apellido" varchar(300),
-  "correo" varchar(300),
-  "password" varchar(300),
-  "fecha_registro" date,
-  "salario_mensual" double,
-  "estado" BIT,
-  "creado_por" varchar(300),
-  "modificado_por" varchar(300),
-  "creado_en" timestamp,
-  "modificado_en" timestamp
-);
+### Tabla Usuario
 
-CREATE TABLE "presupuesto" (
-  "id_presupuesto" int PRIMARY KEY,
-  "id_usuario" int,
-  "usuario" varchar(300),
-  "nombre" varchar(300),
-  "year_inicio" int,
-  "mes_inicio" int,
-  "year_fin" int,
-  "mes_fin" int,
-  "total_ingresos" double,
-  "total_gastos" double,
-  "total_ahorro" double,
-  "fecha_hora_creacion" date,
-  "estado" BIT,
-  "creado_por" varchar(300),
-  "modificado_por" varchar(300),
-  "creado_en" timestamp,
-  "modificado_en" timestamp
-);
+Almacena la información de los usuarios del sistema.
 
-CREATE TABLE "categoria" (
-  "id_categoria" int PRIMARY KEY,
-  "id_usuario" int,
-  "nombre" varchar(300),
-  "descripcion" varchar(300),
-  "tipo" varchar(300),
-  "creado_por" varchar(300),
-  "modificado_por" varchar(300),
-  "creado_en" timestamp,
-  "modificado_en" timestamp
-);
+Campos principales:
 
-CREATE TABLE "subcategoria" (
-  "id_subcategoria" int PRIMARY KEY,
-  "id_categoria" int,
-  "categoria" varchar(300),
-  "nombre" varchar(300),
-  "descripcion" varchar(300),
-  "indicador_activa" BIT,
-  "indicador_subcategoria" varchar(300),
-  "creado_por" varchar(300),
-  "modificado_por" varchar(300),
-  "creado_en" timestamp,
-  "modificado_en" timestamp
-);
-
-CREATE TABLE "presupuesto_detalle" (
-  "id_presupuesto_detalle" int PRIMARY KEY,
-  "id_presupuesto" int,
-  "id_subcategoria" int,
-  "monto_mensual" double,
-  "observaciones" varchar(500),
-  "creado_por" varchar(300),
-  "modificado_por" varchar(300),
-  "creado_en" timestamp,
-  "modificado_en" timestamp
-);
-
-CREATE TABLE "obligacion_fija" (
-  "id_obligacion" int PRIMARY KEY,
-  "id_subcategoria" int,
-  "nombre" varchar(300),
-  "descripcion" varchar(500),
-  "monto_mensual" double,
-  "dia_vencimiento" int,
-  "vigente" BIT,
-  "fecha_inicio" date,
-  "fecha_finalizacion" date,
-  "creado_por" varchar(300),
-  "modificado_por" varchar(300),
-  "creado_en" timestamp,
-  "modificado_en" timestamp
-);
-
-CREATE TABLE "transaccion" (
-  "id_transaccion" int PRIMARY KEY,
-  "id_presupuesto" int,
-  "year" int,
-  "mes" int,
-  "id_obligacion" int,
-  "tipo_transaccion" varchar(300),
-  "descripcion" varchar,
-  "monto" double,
-  "fecha" date,
-  "metodo_pago" varchar,
-  "fecha_registro" datetime,
-  "num_factura" varchar,
-  "observaciones" varchar,
-  "creado_por" varchar(300),
-  "modificado_por" varchar(300),
-  "creado_en" timestamp,
-  "modificado_en" timestamp
-);
-
-CREATE TABLE "transacciones_obligacion_fija" (
-  "id_transaccion" int PRIMARY KEY,
-  "id_obligacion" int
-);
-
-ALTER TABLE "presupuesto" ADD FOREIGN KEY ("id_usuario") REFERENCES "usuario" ("id_usuario");
-
-ALTER TABLE "subcategoria" ADD FOREIGN KEY ("id_categoria") REFERENCES "categoria" ("id_categoria");
-
-ALTER TABLE "presupuesto_detalle" ADD FOREIGN KEY ("id_presupuesto") REFERENCES "presupuesto" ("id_presupuesto");
-
-ALTER TABLE "presupuesto_detalle" ADD FOREIGN KEY ("id_subcategoria") REFERENCES "subcategoria" ("id_subcategoria");
-
-ALTER TABLE "obligacion_fija" ADD FOREIGN KEY ("id_subcategoria") REFERENCES "subcategoria" ("id_subcategoria");
-
-ALTER TABLE "transaccion" ADD FOREIGN KEY ("id_presupuesto") REFERENCES "presupuesto" ("id_presupuesto");
-
-ALTER TABLE "transacciones_obligacion_fija" ADD FOREIGN KEY ("id_transaccion") REFERENCES "transaccion" ("id_transaccion");
-
-ALTER TABLE "transacciones_obligacion_fija" ADD FOREIGN KEY ("id_obligacion") REFERENCES "obligacion_fija" ("id_obligacion");
-
-Se crearon las siguientes tablas: usuario, transaccion, obligacion fija, presupuesto, categoria, subcategoria, presupuesto-detalle y transacciones-obligacion fija. Estas tablas se crean a partir de que descargue el .sql de dbdiagram y con ayuda de la inteligencia artificial, ya que dbdiagram no tenia la sintaxis de sql anywhere, pude crear la sintaxis para crearla.
-
+- id_usuario
+- nombre
+- apellido
+- correo
+- password
+- fecha_registro
+- salario_mensual
 
 ---
-## 8. Creacion de CRUD, Procedimientos Logicos, Funciones y Triggers
-Ya teniendo las tablas creadas, comence con el CRUD, el cual significa (Create, Read, Update, Delete) para cada uno de los atributos en la tabla. Despues, comence con las funciones, las cuales nos ayudan a hacer calculos o determinar rangos por medio de ellas. Tambien los procedimientos, que aunque no den un resultado ayudan a hacer algo dentro de la base de datos. Y por ultimo el trigger, el cual marca inmediatamente una subcategoria a la hora de crear una categoria.
+
+### Tabla Presupuesto
+
+Representa los presupuestos creados por los usuarios.
+
+Incluye información como:
+
+- periodo de inicio
+- periodo de finalización
+- total de ingresos
+- total de gastos
+- total de ahorro
 
 ---
-## 9. Conectar la Base de Datos en Java 
-Para poder implementar la parte visual, decidi conectar mi base de datos con Java, especificamente utilizando la aplicacion APACHE NETBEANS. No necesite instalarlo ya que anteriormente habia hecho uso de el. Al entrar, cree un nuevo proyecto. Para conectarlo con sql Central, le di al click derecho encima de el proyecto, le di click a properties y dentro de alli me fui a la seccion "Libraries". Ya en Libraries, le di al icono de + al lado de ClassPath y busque en mis archivos "C:\Program Files\SQL Anywhere 17\Java\sajdbc4.jar" ya que ese es el archivo de sql anywhere que permite la conexion. Para poder hacer uso de la base de datos, cree una clase que me ayude con la conexion con una base de datos en especifico, en este caso la del proyecto. Usando 
-            "String url = "jdbc:sqlanywhere:uid= Maria Rodriguez ;pwd=*********;"
-                    + "dbf=C:/Users/Maria Gabriela/OneDrive/Desktop/Ingenieria en Sistemas/TBD/22441044_ProyectoTBD.db";", 
-pude conectar con la base de datos, ya que jdbc es el tipo de base de datos que es, uid es mi user id con el que he trabajado, pwd siendo la clave de mi usuario y dbf en que carpeta esta mi base de datos.
+
+### Tabla Categoría
+
+Permite clasificar los diferentes tipos de movimientos financieros.
+
+Ejemplos de categorías:
+
+- alimentación
+- transporte
+- vivienda
+- entretenimiento
 
 ---
-## 10. Creacion de Datos Aleatorios
-Para la creacion de datos aleatorios, hice uso de https://www.mockaroo.com/ que crea datos aleatorios para algunos elementos especificos de las tablas, los id usualmente se hacen aleatoriamente con autoincremento, omitiendolo a la hora de insertar.
+
+### Tabla Subcategoría
+
+Permite una clasificación más específica dentro de cada categoría.
+
+Ejemplo:
+
+Categoría: Transporte  
+
+Subcategorías:
+- gasolina
+- transporte público
+- mantenimiento del vehículo
+
+---
+
+### Tabla Presupuesto Detalle
+
+Relaciona las subcategorías con un presupuesto específico y permite asignar montos mensuales para cada categoría.
+
+---
+
+### Tabla Obligación Fija
+
+Permite registrar pagos recurrentes como:
+
+- renta
+- servicios
+- préstamos
+- seguros
+
+Incluye información como el monto mensual y el día de vencimiento.
+
+---
+
+### Tabla Transacción
+
+Registra cada movimiento financiero realizado por el usuario.
+
+Campos importantes:
+
+- monto
+- fecha
+- método de pago
+- tipo de transacción
+- descripción
+
+---
+
+### Tabla Transacciones Obligación Fija
+
+Relaciona las transacciones con obligaciones fijas cuando corresponde.
+
+---
+
+## 10. Relaciones de la Base de Datos
+
+Las tablas se encuentran relacionadas mediante **llaves foráneas (Foreign Keys)**.
+
+Ejemplos:
+
+- Un usuario puede tener múltiples presupuestos.
+- Una categoría puede tener varias subcategorías.
+- Un presupuesto puede tener múltiples transacciones.
+- Una subcategoría puede tener obligaciones fijas.
+
+Estas relaciones permiten mantener la **integridad y consistencia de los datos** dentro del sistema.
+
+---
+
+## 11. Implementación de CRUD
+
+Para cada tabla se implementaron operaciones **CRUD**.
+
+CRUD significa:
+
+- **Create** → crear registros
+- **Read** → consultar registros
+- **Update** → actualizar registros
+- **Delete** → eliminar registros
+
+Estas operaciones permiten que el usuario pueda interactuar con la base de datos desde la aplicación.
+
+---
+
+## 12. Funciones, Procedimientos y Triggers
+
+Además del CRUD, se implementaron elementos avanzados de bases de datos.
+
+### Funciones
+
+Permiten realizar cálculos o generar resultados a partir de los datos almacenados.
+
+Ejemplo:
+
+- cálculo de montos totales
+- análisis de gastos por categoría
+
+### Procedimientos Almacenados
+
+Permiten ejecutar procesos dentro de la base de datos para automatizar operaciones y mejorar el rendimiento.
+
+### Triggers
+
+Los triggers permiten ejecutar acciones automáticamente cuando ocurre un evento en la base de datos.
+
+Por ejemplo:
+
+- ejecutar validaciones al insertar registros
+- actualizar información relacionada automáticamente
+
+---
+
+## 13. Conexión de la Base de Datos con Java
+
+Para la implementación de la interfaz visual se utilizó **Apache NetBeans**.
+
+La conexión entre Java y SQL Anywhere se realizó mediante **JDBC (Java Database Connectivity)**.
+
+Se agregó la librería:
+
+```
+sajdbc4.jar
+```
+
+Ubicada en:
+
+```
+C:\Program Files\SQL Anywhere 17\Java\sajdbc4.jar
+```
+
+La conexión se realiza mediante una cadena de conexión como la siguiente:
+
+```java
+String url = "jdbc:sqlanywhere:uid=Maria Rodriguez;pwd=********;"
+        + "dbf=C:/Users/Maria Gabriela/OneDrive/Desktop/Ingenieria en Sistemas/TBD/22441044_ProyectoTBD.db";
+```
+
+Esto permite que la aplicación Java pueda ejecutar consultas SQL directamente en la base de datos.
+
+---
+
+## 14. Generación de Datos de Prueba
+
+Para generar datos de prueba se utilizó la herramienta:
+
+https://www.mockaroo.com
+
+Esta herramienta permite crear grandes cantidades de datos simulados para poblar las tablas de la base de datos.
+
+Los identificadores principales de las tablas se generan mediante **autoincremento**, por lo que no es necesario especificarlos manualmente al momento de insertar registros.
+
+---
+
+## 15. Conclusión
+
+El desarrollo de este proyecto permitió aplicar de manera práctica los conocimientos adquiridos en la asignatura **Teoría de Base de Datos I**, integrando el diseño de una base de datos relacional con una aplicación funcional.
+
+El sistema desarrollado permite gestionar información financiera personal mediante tecnologías como **SQL Anywhere, Java y JDBC**, demostrando la importancia de una correcta estructuración de datos y la implementación de procesos automatizados dentro de una base de datos.
+
+Este tipo de sistemas representa la base de muchas aplicaciones utilizadas en organizaciones y empresas para la gestión de información financiera y administrativa.
